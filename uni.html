@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>University Dashboard</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  <style>
+    body {
+      background-color: #f8f9fa;
+      padding-top: 20px; /* Adjusted to give space for the fixed navbar */
+    }
+    .container {
+      max-width: 1200px; /* Adjusted for a wider content area */
+    }
+    .card {
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .card-header {
+      background-color: #007bff;
+      color: #ffffff;
+      font-weight: bold;
+    }
+    .card-body {
+      padding: 20px;
+    }
+    .navbar {
+      background-color: #007bff; /* Bootstrap primary color */
+      padding: 14px 0;
+      border-radius: 0;
+      min-height: auto; /* Adjusted to reduce vertical space */
+    }
+    .navbar-brand,
+    .navbar-nav .nav-link {
+      color: #ffffff;
+    }
+    .navbar-brand:hover,
+    .navbar-nav .nav-link:hover {
+      color: #ffffff;
+    }
+    .navbar-nav .nav-link.active {
+      font-weight: bold;
+      background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+    }
+    .sidebar {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 100;
+      padding: 48px 0 0; /* Adjusted for top padding */
+      box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+      background-color: #f8f9fa;
+    }
+    .sidebar-sticky {
+      position: relative;
+      top: 0;
+      height: calc(100vh - 48px); /* Adjusted for top navbar height */
+      padding-top: .5rem;
+      overflow-x: hidden;
+      overflow-y: auto; /* Scrollable sidebar */
+    }
+    .sidebar .nav-link {
+      font-weight: 500;
+      color: #333;
+    }
+    .sidebar .nav-link:hover {
+      color: #007bff; /* Bootstrap primary color on hover */
+    }
+    .main-content {
+      margin-left: 240px; /* Adjusted for sidebar width */
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+    <a class="navbar-brand" href="#">University Dashboard</a>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Sidebar -->
+      <nav class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+        <div class="sidebar-sticky">
+          <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+            <span>Ngo List</span>
+          </h6>
+          <ul class="nav flex-column mb-2">
+            <li class="nav-item">
+              <a class="nav-link active" href="#" onclick="showNGO('ngo1')">NGO A</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" onclick="showNGO('ngo2')">NGO B</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" onclick="showNGO('ngo3')">NGO C</a>
+            </li>
+            <!-- Add more NGO links as needed -->
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4 main-content">
+        <!-- Student Data Display -->
+        <div class="card">
+          <div class="card-header">
+            Students Data
+          </div>
+          <div class="card-body">
+            <div id="studentsTableContainer" style="display: none;">
+              <table id="studentsTable" class="table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>University</th>
+                    <th>Course</th>
+                    <th>Contact</th>
+                  </tr>
+                </thead>
+                <tbody id="studentsBody">
+                  <!-- Student data will be populated here dynamically -->
+                </tbody>
+              </table>
+            </div>
+            <div id="noDataMessage" style="display: none;">
+              No students data available.
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Custom JavaScript -->
+  <script>
+    // Function to show students data for the selected NGO
+    function showNGO(ngoName) {
+      // Example: Replace with actual data fetching mechanism
+      var studentsData = [];
+
+      // Simulated data for demonstration
+      if (ngoName === 'ngo1') {
+        studentsData = [
+          { name: 'John Doe', age: 20, university: 'Example University', course: 'Computer Science', contact: 'john.doe@example.com' },
+          { name: 'Jane Smith', age: 21, university: 'Another University', course: 'Biology', contact: 'jane.smith@example.com' }
+          // Add more students as needed
+        ];
+      } else if (ngoName === 'ngo2') {
+        studentsData = [
+          { name: 'Michael Johnson', age: 22, university: 'Yet Another University', course: 'Mathematics', contact: 'michael.johnson@example.com' },
+          { name: 'Emily Brown', age: 19, university: 'New University', course: 'Physics', contact: 'emily.brown@example.com' }
+          // Add more students as needed
+        ];
+      } else if (ngoName === 'ngo3') {
+        studentsData = [
+          { name: 'David Lee', age: 23, university: 'University of Science', course: 'Chemistry', contact: 'david.lee@example.com' },
+          { name: 'Sophia White', age: 20, university: 'Tech University', course: 'Engineering', contact: 'sophia.white@example.com' }
+          // Add more students as needed
+        ];
+      }
+
+      // Display students data in the UI
+      var studentsBody = document.getElementById('studentsBody');
+      var studentsTableContainer = document.getElementById('studentsTableContainer');
+      var noDataMessage = document.getElementById('noDataMessage');
+
+      if (studentsData.length > 0) {
+        studentsBody.innerHTML = ''; // Clear previous data
+
+        studentsData.forEach(function(student) {
+          var row = document.createElement('tr');
+          row.innerHTML = `<td>${student.name}</td>
+                           <td>${student.age}</td>
+                           <td>${student.university}</td>
+                           <td>${student.course}</td>
+                           <td>${student.contact}</td>`;
+          studentsBody.appendChild(row);
+        });
+
+        studentsTableContainer.style.display = 'block';
+        noDataMessage.style.display = 'none';
+      } else {
+        studentsTableContainer.style.display = 'none';
+        noDataMessage.style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>
