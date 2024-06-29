@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NGO Student Portal</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  <style>
+    body {
+      background-color: #fefae0; /* Light yellow */
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .jumbotron {
+      background-color: #d4a373; /* Light brown */
+      color: #ffffff;
+      padding: 2rem;
+      margin-bottom: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .card {
+      margin-bottom: 20px;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .card-header {
+      background-color: #faedcd; /* Light orange */
+      color: #333333;
+      font-weight: bold;
+      border-radius: 0.5rem 0.5rem 0 0;
+      transition: background-color 0.3s ease;
+    }
+    .card-body {
+      padding: 20px;
+      background-color: #ffffff; /* White */
+    }
+    .btn-primary {
+      background-color: #a7c957; /* Light green */
+      border-color: #e9edc9;
+      padding: 0.5rem 1rem;
+      border-radius: 0.25rem;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .btn-primary:hover {
+      background-color: #ccd5ae; /* Light olive */
+      border-color: #ccd5ae;
+    }
+    .card-body p, .card-body a {
+      transition: color 0.3s ease;
+    }
+    .card-body a:hover {
+      color: #ff6347; /* Highlight color */
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    .row {
+      display: flex;
+      justify-content: space-around;
+    }
+    .col-md-6 {
+      flex: 1;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <h1 class="display-4">NGO Student Portal</h1>
+      <p class="lead">Empowering Education through Technology</p>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            Partner NGOs
+          </div>
+          <div class="card-body">
+            <p>Submit student profiles for validation by committee members.</p>
+            <a href="#" class="btn btn-primary btn-block">Submit Profiles</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            Student Data
+          </div>
+          <div class="card-body">
+            <p>Store and visualize both current and alumni student information.</p>
+            <a href="#" class="btn btn-primary btn-block">View Data</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            Reports
+          </div>
+          <div class="card-body">
+            <p>Visualize reports and analytics for informed decision-making.</p>
+            <a href="#" class="btn btn-primary btn-block">View Reports</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            Alumni Networking
+          </div>
+          <div class="card-body">
+            <p>Connect with alumni for guidance and network expansion.</p>
+            <a href="#" class="btn btn-primary btn-block">Find Alumni</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
