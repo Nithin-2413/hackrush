@@ -1,234 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Registration Page</title>
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
-  <!--Stylesheet-->
-  <style media="screen">
-    *,
-    *:before,
-    *:after{
-      padding: 0;
-      margin: 0;
-      box-sizing: border-box;
-    }
-    body{
-      background-color: #080710;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 120vh;
-      margin: 0;
-    }
-    .background{
-      width: 800px;
-      height: 1000px;
-      position: absolute;
-    }
-    .background .shape{
-      height: 300px;
-      width: 300px;
-      position: absolute;
-      border-radius: 50%;
-    }
-    .shape:first-child{
-      background: linear-gradient(
-        #1845ad,
-        #23a2f6
-      );
-      left: -100px;
-      top: -100px;
-    }
-    .shape:last-child{
-      background: linear-gradient(
-        to right,
-        #ff512f,
-        #f09819
-      );
-      right: -50px;
-      bottom: -100px;
-    }
-    .container1{
-      width: 600px;
-      background-color: rgba(255,255,255,0.13);
-      border-radius: 10px;
-      backdrop-filter: blur(10px);
-      border: 2px solid rgba(255,255,255,0.1);
-      box-shadow: 0 0 40px rgba(8,7,16,0.6);
-      padding: 40px 35px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: relative;
-    }
-    select {
-      background-color: #201577; /* Match the background color of the page */
-      color: #ffffff; /* Text color remains white */
-    }
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <div class="spacing1">
+      <div class="container1">
+        <h1>Student Registration Form</h1>
+        <form id="registrationForm">
+          <label for="firstName">First Name</label>
+          <input type="text" id="firstName" name="firstName" required>
 
-    .container1 *{
-      font-family: 'Poppins',sans-serif;
-      color: #ffffff;
-      letter-spacing: 0.5px;
-      outline: none;
-      border: none;
-    }
-    .container1 h1{
-      font-size: 28px;
-      font-weight: 500;
-      line-height: 38px;
-      text-align: center;
-    }
-    label{
-      display: block;
-      margin-top: 15px;
-      font-size: 14px;
-      font-weight: 500;
-    }
-    input, select{
-      display: block;
-      height: 40px;
-      width: 100%;
-      background-color: rgba(255,255,255,0.07);
-      border-radius: 3px;
-      padding: 0 10px;
-      margin-top: 6px;
-      font-size: 12px;
-      font-weight: 300;
-      box-shadow: 0 0 5px rgba(255, 100, 0, 0.5); /* Orange glow */
-      transition: box-shadow 0.3s ease-in-out;
-    }
-    input:focus, select:focus{
-      box-shadow: 0 0 10px rgba(255, 100, 0, 1); /* Intense orange glow */
-    }
-    ::placeholder{
-      color: #e5e5e5;
-    }
-    button{
-      margin-top: 20px;
-      width: 100%;
-      background-color: #ff512f;
-      color: #ffffff;
-      padding: 12px 0;
-      font-size: 16px;
-      font-weight: 600;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s, box-shadow 0.3s;
-      box-shadow: 0 0 5px rgba(255, 100, 0, 0.5); /* Orange glow */
-    }
-    button:hover{
-      background-color: #e44e1b;
-      box-shadow: 0 0 10px rgba(255, 100, 0, 1); /* Intense orange glow */
-    }
-    .checkbox-container {
-      display: flex;
-      align-items: center;
-      margin-top: 15px;
-    }
-    .checkbox-container input {
-      height: 18px;
-      width: 18px;
-      margin-right: 10px;
-      accent-color: #23a2f6; /* Customize the checkbox color */
-    }
-    #occupationDetails {
-      display: none;
-    }
-  </style>
-</head>
-<body>
-  <div class="background">
-    <div class="shape"></div>
-    <div class="shape"></div>
-  </div>
-  <div class="container1">
-    <h1>Student Application Form</h1>
-    <form id="registrationForm">
-      <label for="firstName">First Name</label>
-      <input type="text" id="firstName" name="firstName" required>
+          <label for="lastName">Last Name</label>
+          <input type="text" id="lastName" name="lastName" required>
 
-      <label for="lastName">Last Name</label>
-      <input type="text" id="lastName" name="lastName" required>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
 
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required>
 
-      <label for="password">Password</label>
-      <input type="password" id="password" name="password" required>
+          <label for="gender">Gender</label>
+          <select id="gender" name="gender" required>
+            <option value="">Select</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+          <label for="stream">Stream of Education</label>
+          <input type="text" id="stream" name="stream" required>
 
-      <label for="gender">Gender</label>
-      <select id="gender" name="gender" required>
-        <option value="">Select</option>
-        <option value="Male">Male</option>
-        <option value="Female">Female</option>
-        <option value="Other">Other</option>
-      </select>
 
-      <label for="stream">Stream of Education</label>
-      <input type="text" id="stream" name="stream" required>
+          <label for="percentage">Percentage</label>
+          <input type="number" id="percentage" name="percentage" required>
 
-      <label for="percentage">Percentage</label>
-      <input type="text" id="percentage" name="percentage" pattern="^\d{1,5}(?:\.\d{1,2})?$" title="Enter a valid percentage (up to 5 digits with optional decimal up to 2 digits)" required>
 
-      <label for="college">College</label>
-      <input type="text" id="college" name="college" required>
 
-      <label for="graduationYear">Year of Graduation</label>
-      <input type="number" id="graduationYear" name="graduationYear" required>
+          <label for="college">College</label>
+          <input type="text" id="college" name="college" required>
 
-      <div class="checkbox-container">
-        <input type="checkbox" id="alumni" name="alumni">
-        <label for="alumni">I am an alumni</label>
+
+
+          <label for="graduationYear">Year of Graduation</label>
+          <input type="number" id="graduationYear" name="graduationYear" required>
+
+          <label for="alumni">
+            <input type="checkbox" id="alumni" name="alumni">
+            I am an alumni
+          </label>
+
+          <div id="occupationDetails" style="display: none;">
+            <label for="company">Company of Work</label>
+            <input type="text" id="company" name="company">
+
+            <label for="place">Place of Work</label>
+            <input type="text" id="place" name="place">
+          </div>
+
+          <label for="terms">
+            <input type="checkbox" id="terms" name="terms" required>
+            I agree to the terms and conditions.
+          </label>
+
+          <button type="submit">Submit</button>
+        </form>
       </div>
+    </div>
 
-      <div id="occupationDetails">
-        <label for="company">Company of Work</label>
-        <input type="text" id="company" name="company">
+    <script>
+      // Function to populate fields from query parameters
+      function populateFields() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const firstName = urlParams.get('firstName');
+        const lastName = urlParams.get('lastName');
+        const email = urlParams.get('email');
 
-        <label for="place">Place of Work</label>
-        <input type="text" id="place" name="place">
-      </div>
-
-      <div class="checkbox-container">
-        <input type="checkbox" id="terms" name="terms" required>
-        <label for="terms">I agree to the terms and conditions.</label>
-      </div>
-
-      <button type="submit">Apply</button>
-    </form>
-  </div>
-
-  <script>
-    // Function to populate fields from query parameters
-    function populateFields() {
-      const urlParams = new URLSearchParams(window.location.search);
-      const firstName = urlParams.get('firstName');
-      const lastName = urlParams.get('lastName');
-      const email = urlParams.get('email');
-
-      document.getElementById('firstName').value = firstName;
-      document.getElementById('lastName').value = lastName;
-      document.getElementById('email').value = email;
-    }
-
-    // Check if there are query parameters and populate fields
-    if (window.location.search.length > 0) {
-      populateFields();
-    }
-
-    // Toggle occupation details based on alumni checkbox
-    document.getElementById('alumni').addEventListener('change', function() {
-      var occupationDetails = document.getElementById('occupationDetails');
-      if (this.checked) {
-        occupationDetails.style.display = 'block';
-      } else {
-        occupationDetails.style.display = 'none';
+        document.getElementById('firstName').value = firstName;
+        document.getElementById('lastName').value = lastName;
+        document.getElementById('email').value = email;
       }
-    });
-  </script>
-</body>
+
+      // Check if there are query parameters and populate fields
+      if (window.location.search.length > 0) {
+        populateFields();
+      }
+
+      // Toggle occupation details based on alumni checkbox
+      document.getElementById('alumni').addEventListener('change', function() {
+        var occupationDetails = document.getElementById('occupationDetails');
+        if (this.checked) {
+          occupationDetails.style.display = 'block';
+        } else {
+          occupationDetails.style.display = 'none';
+        }
+      });
+    </script>
+  </body>
 </html>
