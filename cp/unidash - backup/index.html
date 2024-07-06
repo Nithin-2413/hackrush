@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="profile">
+            <img src="profile.jpg" alt="Profile Picture">
+            <h3>St. Bhatevara Foundation</h3>
+        </div>
+        <ul>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">NGOs</a></li>
+            <li><a href="#">Courses</a></li>
+            <li><a href="#">Departments</a></li>
+            <li><a href="#">Professors</a></li>
+            <li><a href="#">Students</a></li>
+            
+            
+            
+            
+            <li><a href="#">University Centres</a></li>
+            <li><a href="#">Reports</a></li>
+            
+            <li><a href="#">Library</a></li>
+            <li><a href="#">Event Management</a></li>
+            <li><a href="#">Forms</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <header>
+            <h1>Dashboard</h1>
+            <div class="actions">
+                <button>Download Report</button>
+                <button>Export</button>
+            </div>
+        </header>
+        <div class="dashboard">
+            <div class="card">
+                <h3>1,100</h3>
+                <p>New Admissions</p>
+                <small>10% higher than last month</small>
+            </div>
+            <div class="card">
+                <h3>60,800</h3>
+                <p>Total Students</p>
+                <small>4% higher than last month</small>
+            </div>
+            <div class="card">
+                <h3>12,521</h3>
+                <p>Master Students</p>
+                <small>4% higher than last month</small>
+            </div>
+            <div class="card">
+                <h3>$24,500</h3>
+                <p>Total Earnings (Year)</p>
+                <small>15% higher than last month</small>
+            </div>
+        </div>
+        <div class="charts">
+            <canvas id="earningsChart"></canvas>
+            <canvas id="studentPassingChart"></canvas>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
