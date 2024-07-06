@@ -97,16 +97,22 @@
     ::placeholder{
       color: #e5e5e5;
     }
-    button{
+    .link-button {
       margin-top: 30px;
       width: 100%;
+      display: block;
       background-color: #ffffff;
       color: #080710;
       padding: 15px 0;
       font-size: 18px;
       font-weight: 600;
       border-radius: 5px;
+      text-align: center;
+      text-decoration: none; /* Remove underline */
       cursor: pointer;
+    }
+    .link-button:hover {
+      background-color: #e5e5e5;
     }
     .line{
       margin-top: 20px;
@@ -117,14 +123,19 @@
     .apply-button{
       margin-top: 20px;
       width: 100%;
+      display: block;
       background-color: #ffffff;
       color: #080710;
       padding: 15px 0;
       font-size: 18px;
       font-weight: 600;
       border-radius: 5px;
-      cursor: pointer;
       text-align: center;
+      text-decoration: none; /* Remove underline */
+      cursor: pointer;
+    }
+    .apply-button:hover {
+      background-color: #e5e5e5;
     }
     .social{
       margin-top: 30px;
@@ -163,9 +174,9 @@
     <label for="password">Password</label>
     <input type="password" placeholder="Password" id="password">
 
-    <button>Log In</button>
+    <a href="https://github.com/Nithin-2413/hackrush/blob/main/nithin/ngo%20reg.html" class="link-button">Log In</a>
     <div class="line"></div>
-    <button class="apply-button">Apply as a Student</button>
+    <a href="https://github.com/Nithin-2413/hackrush/blob/main/nithin/ngo%20reg.html" class="apply-button">Apply as a Student</a>
   </form>
 </body>
 </html>
