@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="profile">
+            <img src="profile.jpg" alt="Profile Picture">
+            <h3>St. Bhatevara Foundation</h3>
+        </div>
+        <ul>
+            <li><a href="#dashboard">Dashboard</a></li>
+            <li><a href="#ngos">NGOs</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#departments">Departments</a></li>
+            <li><a href="#professors">Professors</a></li>
+            <li><a href="#students">Students</a></li>
+            <li><a href="#university-centres">University Centres</a></li>
+            <li><a href="#reports">Reports</a></li>
+            <li><a href="#library">Library</a></li>
+            <li><a href="#event-management">Event Management</a></li>
+            <li><a href="#forms">Forms</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <!-- Dashboard Section -->
+        <div id="dashboard" class="tab-content">
+            <header>
+                <h1>Dashboard</h1>
+                <div class="actions">
+                    <button>Download Report</button>
+                    <button>Export</button>
+                </div>
+            </header>
+            <div class="dashboard">
+                <div class="card">
+                    <h3>1,100</h3>
+                    <p>New Admissions</p>
+                    <small>10% higher than last month</small>
+                </div>
+                <div class="card">
+                    <h3>60,800</h3>
+                    <p>Total Students</p>
+                    <small>4% higher than last month</small>
+                </div>
+                <div class="card">
+                    <h3>12,521</h3>
+                    <p>Master Students</p>
+                    <small>4% higher than last month</small>
+                </div>
+                <div class="card">
+                    <h3>$24,500</h3>
+                    <p>Total Earnings (Year)</p>
+                    <small>15% higher than last month</small>
+                </div>
+            </div>
+            <div class="charts">
+                <canvas id="earningsChart"></canvas>
+                <canvas id="studentPassingChart"></canvas>
+            </div>
+        </div>
+
+        <!-- NGOs Section -->
+        <div id="ngos" class="tab-content">
+            <header>
+                <h1>NGOs</h1>
+                <div class="actions">
+                    <button>Download NGO Report</button>
+                    <button>Export</button>
+                </div>
+            </header>
+            <div class="ngos">
+                <h2>List of NGOs</h2>
+                <button id="ngo1">NGO 1</button>
+                <button id="ngo2">NGO 2</button>
+                <button id="ngo3">NGO 3</button>
+                <!-- Add more NGO buttons as needed -->
+            </div>
+        </div>
+
+        <!-- Courses Section -->
+        <div id="courses" class="tab-content">
+            <header>
+                <h1>Courses</h1>
+                <div class="actions">
+                    <button>Download Course Report</button>
+                    <button>Export</button>
+                </div>
+            </header>
+            <div class="courses">
+                <h2>List of Courses</h2>
+                <div class="course">
+                    <h3>Course A</h3>
+                    <p>Description of Course A</p>
+                    <small>Enrollment: 500</small>
+                </div>
+                <div class="course">
+                    <h3>Course B</h3>
+                    <p>Description of Course B</p>
+                    <small>Enrollment: 300</small>
+                </div>
+                <!-- Add more courses as needed -->
+            </div>
+        </div>
+
+        <!-- Departments Section -->
+        <div id="departments" class="tab-content">
+            <header>
+                <h1>Departments</h1>
+                <div class="actions">
+                    <button>Download Department Report</button>
+                    <button>Export</button>
+                </div>
+            </header>
+            <div class="departments">
+                <h2>List of Departments</h2>
+                <div class="department">
+                    <h3>Department X</h3>
+                    <p>Description of Department X</p>
+                    <small>Head: Prof. Y</small>
+                </div>
+                <div class="department">
+                    <h3>Department Y</h3>
+                    <p>Description of Department Y</p>
+                    <small>Head: Prof. Z</small>
+                </div>
+                <!-- Add more departments as needed -->
+            </div>
+        </div>
+
+        <!-- Professors Section -->
+        <div id="professors" class="tab-content">
+            <header>
+                <h1>Professors</h1>
+                <div class="actions">
+                    <button>Download Professor Report</button>
+                    <button>Export</button>
+                </div>
+            </header>
+            <div class="professors">
+                <h2>List of Professors</h2>
+                <div class="professor">
+                    <h3>Prof. John Doe</h3>
+                    <p>Department: Department X</p>
+                    <small>Courses Taught: Course A, Course B</small>
+                </div>
+                <div class="professor">
+                    <h3>Prof. Jane Smith</h3>
+                    <p>Department: Department Y</p>
+                    <small>Courses Taught: Course C, Course D</small>
+                </div>
+                <!-- Add more professors as needed -->
+            </div>
+        </div>
+
+        <!-- Students Section -->
+        <div id="students" class="tab-content">
+            <header>
+                <h1>Students</h1>
+                <div class="actions">
+                    <button>Download Student Report</button>
+                    <button>Export</button>
+                </div>
+            </header>
+            <div class="students">
+                <h2>List of Students</h2>
+                <div id="studentList"></div>
+            </div>
+        </div>
+
+        <!-- University Centres Section -->
+        <div id="university-centres" class="tab-content">
+            <header>
+                <h1>University Centres</h1>
+                <div class="actions">
+                    <button>Download Centre Report</button>
+                    <button>Export</button>
+                </div>
+            </header>
+            <div class="university-centres">
+                <h2>List of University Centres</h2>
+                <div class="centre">
+                    <h3>Centre X</h3>
+                    <p>Description of Centre X</p>
+                    <small>Location: Building A</small>
+                </div>
+                <div class="centre">
+                    <h3>Centre Y</h3>
+                    <p>Description of Centre Y</p>
+                    <small>Location: Building B</small>
+                </div>
+                <!-- Add more university centres as needed -->
+            </div>
+        </div>
+
+        <!-- Reports Section -->
+        <div id="reports" class="tab-content">
+            <header>
+                <h1>Reports</h1>
+                <div class="actions">
+                    <button>Download All Reports</button>
+                    <button>Export</button>
+                </div>
+            </header>
+            <div class="reports">
+                <h2>List of Reports</h2>
+                <div class="report">
+                    <h3>Report 1</h3>
+                    <p>Summary of Report 1</p>
+                    <small>Author: Prof. Z</small>
+                </div>
+                <div class="report">
+                    <h3>Report 2</h3>
+                    <p>Summary of Report 2</p>
+                    <small>Author: Prof. W</small>
+                </div>
+                <!-- Add more reports as needed -->
+            </div>
+        </div>
+
+        <!-- Library Section -->
+        <div id="library" class="tab-content">
+            <header>
+                <h1>Library</h1>
+                <div class="actions">
+                    <button>Download Library Catalog</button>
+                    <button>Export</button>
+                </div>
+            </header>
+            <div class="library">
+                <h2>List of Books</h2>
+                <div class="book">
+                    <h3>Book A</h3>
+                    <p>Author: Author X</p>
+                    <small>Genre: Fiction</small>
+                </div>
+                <div class="book">
+                    <h3>Book B</h3>
+                    <p>Author: Author Y</p>
+                    <small>Genre: Non-Fiction</small>
+                </div>
+                <!-- Add more books as needed -->
+            </div>
+        </div>
+
+        <!-- Event Management Section -->
+        <div id="event-management" class="tab-content">
+            <header>
+                <h1>Event Management</h1>
+                <div class="actions">
+                    <button>Download Event Report</button>
+                    <button>Export</button>
+                </div>
+            </header>
+            <div class="events">
+                <h2>List of Events</h2>
+                <div class="event">
+                    <h3>Event X</h3>
+                    <p>Description of Event X</p>
+                    <small>Date: January 1, 2025</small>
+                </div>
+                <div class="event">
+                    <h3>Event Y</h3>
+                    <p>Description of Event Y</p>
+                    <small>Date: February 15, 2025</small>
+                </div>
+                <!-- Add more events as needed -->
+            </div>
+        </div>
+
+        <!-- Forms Section -->
+        <div id="forms" class="tab-content">
+            <header>
+                <h1>Forms</h1>
+                <div class="actions">
+                    <button>Download Form Templates</button>
+                </div>
+            </header>
+            <div class="forms">
+                <h2>List of Forms</h2>
+                <div class="form">
+                    <h3>Form A</h3>
+                    <p>Description of Form A</p>
+                    <small>Usage: Registration</small>
+                </div>
+                <div class="form">
+                    <h3>Form B</h3>
+                    <p>Description of Form B</p>
+                    <small>Usage: Feedback</small>
+                </div>
+                <!-- Add more forms as needed -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
